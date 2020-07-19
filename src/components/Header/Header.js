@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { Grid } from '@material-ui/core'
 import ButtonContext from '../../buttonContext'
@@ -7,11 +7,14 @@ import { useStyles } from './styles'
 
 export const Header = (props) => {
   const classes = useStyles()
-  const [setPage, setClicked] = useContext(ButtonContext)
+  const [page, setPage] = useContext(ButtonContext)
+  const setRef = useRef(page)
 
   const toMainPage = () => {
-    setClicked(true)
-    setPage(null)
+    if (setRef.current !== page) {
+      setPage(null)
+      setRef.current = null
+    }
   }
 
   return (

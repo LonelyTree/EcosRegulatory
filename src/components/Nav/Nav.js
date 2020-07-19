@@ -1,22 +1,26 @@
-import React, { useState, useEffect, useContext } from 'react'
+import React, { useState, useEffect, useContext, useRef } from 'react'
 import { Grid, BottomNavigation, BottomNavigationAction } from '@material-ui/core'
 import ButtonContext from '../../buttonContext'
 import { useStyles } from './styles'
 
 export const Nav = (props) => {
   const classes = useStyles()
-  const [setPage, setClicked, clicked] = useContext(ButtonContext)
+  const [page, setPage] = useContext(ButtonContext)
   const [value, setValue] = useState(null)
+  const refValue = useRef(value)
 
   useEffect(() => {
     const liftUp = () => {
-      if (clicked) {
+      if (page === null && refValue.current === value) {
         setValue(null)
         setPage(null)
-      } else { setPage(value) }
+      } else {
+        setPage(value)
+        refValue.current = value
+      }
     }
     liftUp()
-  }, [value, clicked, setPage])
+  }, [value, page, setPage, refValue])
 
   return (
     <Grid item className={classes.nav_container}>
