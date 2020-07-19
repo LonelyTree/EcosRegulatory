@@ -11,7 +11,7 @@ export const useStyles = makeStyles((theme) => ({
     },
     nav_switchboard: {
       width: '100%',
-      '& button.Mui-selected': { background: 'green' }
+      '& button.Mui-selected': { background: '#88c962' }
     }
   },
   [theme.breakpoints.up('sm')]: {},

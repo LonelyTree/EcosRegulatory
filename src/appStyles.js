@@ -6,10 +6,8 @@ export const useStyles = makeStyles((theme) => ({
       padding: '4%',
       height: '100%',
       alignItems: 'center',
-      flexDirection: 'column'
-    },
-    header: {
-      color: 'green'
+      flexDirection: 'column',
+      fontSmoothing: 'subpixel-antialiased'
     }
   },
   [theme.breakpoints.up('sm')]: {},
