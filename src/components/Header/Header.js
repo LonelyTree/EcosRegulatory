@@ -1,4 +1,4 @@
-import React, { useContext, useRef } from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import { Grid } from '@material-ui/core'
 import ButtonContext from '../../buttonContext'
@@ -7,21 +7,16 @@ import { useStyles } from './styles'
 
 export const Header = (props) => {
   const classes = useStyles()
-  const [page, setPage] = useContext(ButtonContext)
-  const setRef = useRef(page)
-
-  const toMainPage = () => {
-    if (setRef.current !== page) {
-      setPage(null)
-      setRef.current = null
-    }
-  }
+  const [page, setPage, value, setValue] = useContext(ButtonContext)
 
   return (
     <Grid container className={classes.header_container}>
       <Link
         className={classes.link}
-        onClick={toMainPage}
+        onClick={() => {
+          setPage(null)
+          setValue(null)
+        }}
         to='/'
       >
         <img src={LOGO} alt='ECOS LOGO' className={classes.logo} />

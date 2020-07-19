@@ -14,12 +14,14 @@ import { useStyles } from './appStyles'
 function App () {
   const classes = useStyles()
   const [page, setPage] = useState(null)
+  const [value, setValue] = useState(null)
+  console.log(page)
   return (
     <Grid>
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <Grid container className={classes.main_container}>
-          <ButtonContext.Provider value={[page, setPage]}>
+          <ButtonContext.Provider value={[page, setPage, value, setValue]}>
             <Header />
             <Nav />
             <Grid item>{(page === 0) ? <About /> : (page === 1) ? <Services /> : (page === 2) ? <Contact /> : <HomePage />}</Grid>
