@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.js": "/EcosRegulatory/static/js/main.bf2f4fad.chunk.js",
+    "main.js.map": "/EcosRegulatory/static/js/main.bf2f4fad.chunk.js.map",
+    "runtime-main.js": "/EcosRegulatory/static/js/runtime-main.86b5fc49.js",
+    "runtime-main.js.map": "/EcosRegulatory/static/js/runtime-main.86b5fc49.js.map",
+    "static/js/2.f4100d10.chunk.js": "/EcosRegulatory/static/js/2.f4100d10.chunk.js",
+    "static/js/2.f4100d10.chunk.js.map": "/EcosRegulatory/static/js/2.f4100d10.chunk.js.map",
+    "index.html": "/EcosRegulatory/index.html",
+    "precache-manifest.89fdeb74b33931a1a5b6a8a769407882.js": "/EcosRegulatory/precache-manifest.89fdeb74b33931a1a5b6a8a769407882.js",
+    "service-worker.js": "/EcosRegulatory/service-worker.js",
+    "static/js/2.f4100d10.chunk.js.LICENSE.txt": "/EcosRegulatory/static/js/2.f4100d10.chunk.js.LICENSE.txt",
+    "static/media/Ecos_color_simple.png": "/EcosRegulatory/static/media/Ecos_color_simple.0f81c760.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.86b5fc49.js",
+    "static/js/2.f4100d10.chunk.js",
+    "static/js/main.bf2f4fad.chunk.js"
+  ]
+}
