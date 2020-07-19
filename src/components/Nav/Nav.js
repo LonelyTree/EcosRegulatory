@@ -1,24 +1,32 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import { Grid, BottomNavigation, BottomNavigationAction } from '@material-ui/core'
-// import { Link } from 'react-router-dom'
+import ButtonContext from '../../buttonContext'
 import { useStyles } from './styles'
 
 export const Nav = (props) => {
   const classes = useStyles()
+  const [setPage, setClicked, clicked] = useContext(ButtonContext)
   const [value, setValue] = useState(null)
-  const liftUp = (props) => {
-    props.lift(value)
-  }
+
+  useEffect(() => {
+    const liftUp = () => {
+      if (clicked) {
+        setValue(null)
+        setPage(null)
+      } else { setPage(value) }
+    }
+    liftUp()
+  }, [value, clicked, setPage])
+
   return (
     <Grid item className={classes.nav_container}>
       <BottomNavigation
         value={value}
         onChange={(event, newValue) => {
           setValue(newValue)
-          liftUp()
         }}
         showLabels
-        className={classes.root}
+        className={classes.nav_switchboard}
       >
         <BottomNavigationAction label='About' />
         <BottomNavigationAction label='Services' />

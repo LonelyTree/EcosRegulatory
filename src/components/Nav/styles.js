@@ -3,14 +3,15 @@ import { makeStyles } from '@material-ui/core'
 export const useStyles = makeStyles((theme) => ({
   [theme.breakpoints.up('xs')]: {
     nav_container: {
+      background: 'blue',
       display: 'inherit',
       width: '100%',
       justifyContent: 'center',
       alignItems: 'center'
     },
-    link: {
-      textDecoration: 'none',
-      '& Button': { height: '100%' }
+    nav_switchboard: {
+      width: '100%',
+      '& button.Mui-selected': { background: 'green' }
     }
   },
   [theme.breakpoints.up('sm')]: {},
