@@ -5,15 +5,14 @@ import { useStyles } from './styles'
 
 export const Nav = (props) => {
   const classes = useStyles()
-  const [page, setPage, value, setValue] = useContext(ButtonContext)
-
+  const { Page, Value } = useContext(ButtonContext)
   return (
     <Grid item className={classes.nav_container}>
       <BottomNavigation
-        value={value}
+        value={Value[0]}
         onChange={(event, newValue) => {
-          setValue(newValue)
-          setPage(newValue)
+          Value[1](newValue)
+          Page[1](newValue)
         }}
         showLabels
         className={classes.nav_switchboard}

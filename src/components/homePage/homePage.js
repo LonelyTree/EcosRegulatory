@@ -1,11 +1,11 @@
 import React, { useContext } from 'react'
-import { Grid, Link, Button } from '@material-ui/core'
+import { Grid, Link } from '@material-ui/core'
 import ButtonContext from '../../buttonContext'
 import { useStyles } from './styles'
 
 const HomePage = () => {
   const classes = useStyles()
-  const [page, setPage] = useContext(ButtonContext)
+  const { Page, Value } = useContext(ButtonContext)
 
   return (
     <Grid>
@@ -17,7 +17,15 @@ const HomePage = () => {
         </p>
         <p>From individual permit preparation to comprehensive program development, our goal is to minimize compliance risk and maximize customer satisfaction.</p>
       </Grid>
-      <Link className={classes.link} to='/about' onClick={() => setPage(0)}>Learn More</Link>
+      <Link
+        className={classes.link} to='/about'
+        onClick={() => {
+          Page[1](0)
+          Value[1](0)
+        }}
+      >
+        Learn More
+      </Link>
     </Grid>
   )
 }

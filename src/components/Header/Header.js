@@ -7,15 +7,14 @@ import { useStyles } from './styles'
 
 export const Header = (props) => {
   const classes = useStyles()
-  const [page, setPage, value, setValue] = useContext(ButtonContext)
-
+  const { Page, Value } = useContext(ButtonContext)
   return (
     <Grid container className={classes.header_container}>
       <Link
         className={classes.link}
         onClick={() => {
-          setPage(null)
-          setValue(null)
+          Page[1](null)
+          Value[1](null)
         }}
         to='/'
       >
